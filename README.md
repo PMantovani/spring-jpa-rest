@@ -46,4 +46,10 @@ Example of adding a city:
     
 ### Tests
 
-There are unit tests and integration tests at spring-jpa-rest/src/test/java/com/mantovani/springjparest
+There are unit tests and integration tests at spring-jpa-rest/src/test/java/com/mantovani/springjparest.
+A test report summary and with coverage can be generated with the jacoco plugin. To do so, run the gradle tasks:
+
+    ./gradlew build jacocoTestReport
+
+A summary will be generated at build/reports/tests/test/index.html.
+A report with code coverage will be generated at build/reports/jacoco/test/html/index.html
