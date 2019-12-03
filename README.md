@@ -24,13 +24,13 @@ Run the Spring application jar with
 
 Open a browser and type in the following endpoint
 
-    http://localhost:8080/rest/cities?country=Uni
+    http://localhost:8090/rest/cities?country=Uni
 
 That will give you the list of cities (pre-populated) filtered by the countries that contain the letters 'Uni'. This is case-sensitive.
 
 There is also an endpoint for retrieving all of the countries (no filter available):
 
-    http://localhost:8080/rest/countries
+    http://localhost:8090/rest/countries
     
 ### POST Requests
 
@@ -38,11 +38,11 @@ You can add new cities and countries to the in-memory H2 database. To do so, use
 
 Example of adding a country:
 
-    curl --header "Content-Type: application/json" --request POST --data '{"name":"Argentina"}' http://localhost:8080/rest/countries
+    curl --header "Content-Type: application/json" --request POST --data '{"name":"Argentina"}' http://localhost:8090/rest/countries
 
 Example of adding a city:
 
-    curl --header "Content-Type: application/json" --request POST --data '{"name":"Quatro Barras", "country":{"id":1}}' http://localhost:8080/rest/cities
+    curl --header "Content-Type: application/json" --request POST --data '{"name":"Quatro Barras", "country":{"id":1}}' http://localhost:8090/rest/cities
     
 ### Tests
 
