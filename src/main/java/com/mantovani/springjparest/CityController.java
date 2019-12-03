@@ -1,20 +1,16 @@
 package com.mantovani.springjparest;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class CityController {
     private final CityRepository cityRepo;
-    private final CountryRepository countryRepo;
 
-    public CityController(CityRepository cityRepo, CountryRepository countryRepo) {
+    public CityController(CityRepository cityRepo) {
         this.cityRepo = cityRepo;
-        this.countryRepo = countryRepo;
     }
 
-    @RequestMapping("/rest/cities")
+    @GetMapping("/rest/cities")
     public Iterable<City> getCities(@RequestParam(value="country", defaultValue="") String name) {
         if (name.equals("")) {
             return cityRepo.findAll();
@@ -22,4 +18,10 @@ public class CityController {
             return cityRepo.findCityByCountryNameContaining(name);
         }
     }
+
+    @PostMapping(path = "/rest/cities", consumes = "application/json", produces = "application/json")
+    public void addCity(@RequestBody City city) {
+        cityRepo.save(city);
+    }
+
 }
