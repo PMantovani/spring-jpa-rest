@@ -5,10 +5,10 @@ This is a programming challenge in Spring, Data Manipulation and REST APIs devel
 
 It uses Spring Boot Data with JPA to provide an interface to the in-memory database H2, to fetch and create data in two related tables: City and Country. These tables can be manipulated in an (almost) RESTful way through webservices endpoints, as explained below. The tables are initialy populated through the db script presented src/main/resources/data.sql, and defined through the schema at /src/main/resources/schema.sql.
 
-The project contain a main Application class (SpringJpaRestApplication.java), two RestController classes (CountryController.java and CityController.java), two POJO classes (City.java and Country.java) and two CrudRepository to talk to the database (CityRepository.java and CountryRepository.java). The project is build with Gradle.
+The project contains a main Application class (SpringJpaRestApplication.java), two RestController classes (CountryController.java and CityController.java), two POJO classes (City.java and Country.java) and two CrudRepository to talk to the database (CityRepository.java and CountryRepository.java). The project is build with Gradle.
 
 ### How to run 
-Build the gradle project with the command.
+Build the gradle project with the command:
 
     ./gradlew build
 
